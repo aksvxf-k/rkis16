@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная страница</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f0f2f5;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; margin: 0;
+    }
+    .card {
+      background: #fff; padding: 40px; border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center; width: 380px;
+    }
+    h1 { color: #1a1a1a; margin-bottom: 15px; font-size: 24px; }
+    p { color: #666; line-height: 1.6; margin-bottom: 25px; }
+    .btn-group { display: flex; gap: 10px; justify-content: center; }
+    .btn {
+      display: inline-block; width: 100%; padding: 12px;
+      background-color: #2563eb; color: #fff; text-decoration: none;
+      border-radius: 8px; border: none; font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .btn:hover { background-color: #1d4ed8; }
+    .btn-outline { background: transparent; color: #2563eb; border: 2px solid #2563eb; }
+    .btn-outline:hover { background-color: #2563eb; color: white; }
+    .btn-danger { background-color: #ef4444; }
+    .btn-danger:hover { background-color: #dc2626; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <% if (user) { %>
+      <h1>Привет, <%= user.username %>!</h1>
+      <p>Вы успешно авторизовались в системе. Это защищенная зона вашей главной страницы.</p>
+      <p><a href="/dashboard" class="btn">Личный кабинет</a></p>
+      <form action="/logout" method="POST">
+        <button type="submit" class="btn btn-danger">Выйти из аккаунта</button>
+      </form>
+    <% } else { %>
+      <h1>Добро пожаловать!</h1>
+      <p>Вы зашли как гость. Войдите или зарегистрируйтесь.</p>
+      <div class="btn-group">
+        <a href="/login" class="btn">Войти</a>
+        <a href="/register" class="btn btn-outline">Регистрация</a>
+      </div>
+    <% } %>
+  </div>
+</body>
+</html>

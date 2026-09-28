@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Личный кабинет</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #f0f2f5;
+      display: flex; justify-content: center; align-items: center;
+      min-height: 100vh; margin: 0;
+    }
+    .card {
+      background: #fff; padding: 40px; border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      text-align: center; width: 420px;
+    }
+    h1 { color: #1a1a1a; }
+    a { color: #2563eb; text-decoration: none; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Личный кабинет</h1>
+    <p>Это секретный личный кабинет пользователя <b><%= user.username %></b>.</p>
+    <p><a href="/">← На главную</a></p>
+  </div>
+</body>
+</html>
