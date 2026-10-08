@@ -15,10 +15,10 @@
     .card {
       background: #fff; padding: 40px; border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      text-align: center; width: 380px;
+      text-align: center; width: 400px;
     }
     h1 { color: #1a1a1a; margin-bottom: 15px; font-size: 24px; }
-    p { color: #666; line-height: 1.6; margin-bottom: 25px; }
+    p { color: #666; line-height: 1.6; margin-bottom: 18px; }
     .btn-group { display: flex; gap: 10px; justify-content: center; }
     .btn {
       display: inline-block; width: 100%; padding: 12px;
@@ -31,25 +31,54 @@
     .btn-outline:hover { background-color: #2563eb; color: white; }
     .btn-danger { background-color: #ef4444; }
     .btn-danger:hover { background-color: #dc2626; }
+    .btn-admin { background-color: #bb29f5; }
+    .btn-admin:hover { background-color: #bb29f5; }
+    .role-badge {
+      display: inline-block; padding: 3px 10px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+    }
+    .role-admin { background: #c7fee2; color: #0e0e92; }
+    .role-user  { background: #dbeafe; color: #24bc1a; }
   </style>
 </head>
 <body>
   <div class="card">
+
     <% if (user) { %>
+
       <h1>Привет, <%= user.username %>!</h1>
-      <p>Вы успешно авторизовались в системе. Это защищенная зона вашей главной страницы.</p>
+
+      <p>
+        Ваша роль:
+        <% if (user.role === 'admin') { %>
+          <span class="role-badge role-admin">admin</span>
+        <% } else { %>
+          <span class="role-badge role-user">user</span>
+        <% } %>
+      </p>
+
       <p><a href="/dashboard" class="btn">Личный кабинет</a></p>
+
+      <% if (user.role === 'admin') { %>
+        <p><a href="/admin" class="btn btn-admin">Админ-панель</a></p>
+      <% } %>
+
       <form action="/logout" method="POST">
         <button type="submit" class="btn btn-danger">Выйти из аккаунта</button>
       </form>
+
     <% } else { %>
+
       <h1>Добро пожаловать!</h1>
       <p>Вы зашли как гость. Войдите или зарегистрируйтесь.</p>
+
       <div class="btn-group">
         <a href="/login" class="btn">Войти</a>
         <a href="/register" class="btn btn-outline">Регистрация</a>
       </div>
+
     <% } %>
+
   </div>
 </body>
 </html>

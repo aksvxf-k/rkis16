@@ -1,17 +1,14 @@
 [
   {
-    "id": 1790588506477,
-    "username": "student",
-    "password": "$2b$10$bKBJiLeUFRJm7V3mNfItr.9iL6IdBsb2/vT30i2lRFROjNcowzbNa"
+    "id": 1790672391891,
+    "username": "admin",
+    "password": "$2b$10$VgN6aw481qzfOTALEEvL8O.dGk3WdEvQ/wWmBtoFu0rNzAQ4EVj/K",
+    "role": "admin"
   },
   {
-    "id": 1790588561546,
-    "username": "BaronessaDeSinyak",
-    "password": "$2b$10$TsDED3NWpNvgOdHlx7NIDOW5vTOABZzA1Z8xKe0jqHgkxNtpx.ofm"
-  },
-  {
-    "id": 1790600246701,
-    "username": "qwe",
-    "password": "$2b$10$FAVSwATZWz67FEvcwoHxm.TeuoFtMNgljw26HpIDfsDtNQqDdwgdm"
+    "id": 1790679192817,
+    "username": "asd",
+    "password": "$2b$10$NtQIn9DS3M3l5N99HDaMzuKw4G3PGf39I6by/gI7xrpVaTNIc/W3q",
+    "role": "user"
   }
 ]
